@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "964561667109",
+    "firebase_url": "https://van-chuyen-24-1e7dc.firebaseio.com",
+    "project_id": "van-chuyen-24-1e7dc",
+    "storage_bucket": "van-chuyen-24-1e7dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964561667109:android:25986c6b9ead4994",
+        "android_client_info": {
+          "package_name": "com.vanchuyen24"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964561667109-tekedt6uke1bm224a2knm3clnmq0vqbd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vanchuyen24",
+            "certificate_hash": "e48479f9bfd545551b0a3691b6aa65c5c4e7a473"
+          }
+        },
+        {
+          "client_id": "964561667109-i9gnalbqj259g27lio2jra01v3d4k1o1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDP7Y0r-SvLoFoKiKyLMtTFSyh_cpkKYmo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964561667109-i9gnalbqj259g27lio2jra01v3d4k1o1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
