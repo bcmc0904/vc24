@@ -13,8 +13,10 @@ import {
   Text,
   BackHandler,
   ToastAndroid,
+  Linking
 } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
+import VersionCheck from 'react-native-version-check';
 import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType} from "react-native-fcm";
 
 const url = 'http://vanchuyen24.com/';
@@ -23,6 +25,7 @@ const uriLogedIn1 = 'http://vanchuyen24.com/vc-dat-don.html';
 const uriLogedIn2 = 'http://vanchuyen24.com/vc-quan-huyen.html';
 const uriLogedIn3 = "http://vanchuyen24.com/vi/vc-quan-huyen.html";
 const uriLogedIn4 = "http://vanchuyen24.com/vi/home.html";
+const checkUpdateUrl = "http://fcm.drupalplus.org/app/vc24/update.json";
 
 const urlPost = 'http://fcm.drupalplus.org/fcm/apptoken';
 const defaultTitle = 'Vận chuyển 24';
@@ -41,15 +44,45 @@ export default class App extends Component {
       url: url,
       receive: '',
       canGoBack: false,
-      badge: 0
+      badge: 0,
+      country: 'vn'
     }
 
     this.handleBackButton = this.handleBackButton.bind(this);
   }
 
+  checkAppUpdate() {
+    let appver = DeviceInfo.getVersion();
+    console.log('app version:', appver);
+
+    VersionCheck.needUpdate().then(async res => {
+      if (res.isNeeded) {
+        await Alert.alert(
+            'Nâng cấp phiên bản',
+            'Đã có bản nâng cấp mới cho điện thoại của bạn',
+            [
+              {
+                text: 'Nhắc tôi sau',
+                onPress: () => console.log('Cancel Pressed'),
+                style: 'cancel'
+              },
+              {
+                text: 'Cập nhật', onPress: () => {
+                Linking.openURL(VersionCheck.getStoreUrl());
+              }
+              },
+            ],
+            {cancelable: false}
+        )
+      }
+    });
+  }
+
   componentDidMount(){
     // BackAndroid.addEventListener('hardwareBackPress', this.handleBackButton);
     BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+
+    this.checkAppUpdate();
 
     FCM.getInitialNotification().then(notif => {
       console.log(notif);

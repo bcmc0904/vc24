@@ -3,6 +3,7 @@ package com.vanchuyen24;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import io.xogus.reactnative.versioncheck.RNVersionCheckPackage;
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
 import com.evollu.react.fcm.FIRMessagingPackage;
 import com.facebook.react.ReactNativeHost;
@@ -25,6 +26,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNVersionCheckPackage(),
             new RNDeviceInfo(),
             new FIRMessagingPackage()
       );
