@@ -148,7 +148,6 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-shortcut-badger')
     compile project(':react-native-device-info')
     compile project(':react-native-fcm')
     compile 'com.google.firebase:firebase-core:10.0.1'

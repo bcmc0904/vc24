@@ -15,7 +15,6 @@ import {
   ToastAndroid,
 } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
-import BadgeNumberAndroid from 'react-native-shortcut-badger'
 import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType} from "react-native-fcm";
 
 const url = 'http://vanchuyen24.com/';
@@ -52,19 +51,12 @@ export default class App extends Component {
     // BackAndroid.addEventListener('hardwareBackPress', this.handleBackButton);
     BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
 
-
-    setInterval(function () {
-      console.log(BadgeNumberAndroid)
-      BadgeNumberAndroid.setNumber(10);
-    }, 1500);
-
     FCM.getInitialNotification().then(notif => {
       console.log(notif);
       this.setState({
         initNotif: notif,
         badge: 0
       });
-      ShortcutBadger.removeCount();
     });
 
     try{
