@@ -8,10 +8,14 @@
  */
 #import <React/RCTPushNotificationManager.h>
 
+#import "RNFIRMessaging.h"
+
 #import "AppDelegate.h"
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+
+//@import Firebase;
 
 @implementation AppDelegate
 
@@ -60,6 +64,8 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   
+  [FIRApp configure];
+  
   [[UNUserNotificationCenter currentNotificationCenter] setDelegate:self];
   
   return YES;
@@ -67,18 +73,18 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler
 {
-  
+  [RNFIRMessaging willPresentNotification:notification withCompletionHandler:completionHandler];
   }
 
 #if defined(__IPHONE_11_0)
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler
 {
-  
+  [RNFIRMessaging didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
   }
 #else
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler
 {
-    [RNFIRMessaging didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
+  [RNFIRMessaging didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
   }
 #endif
 

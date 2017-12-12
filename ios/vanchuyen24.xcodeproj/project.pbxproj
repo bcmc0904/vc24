@@ -34,12 +34,15 @@
 		2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */; };
 		2D02E4C91E0B4AEC006451C7 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* vanchuyen24Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* vanchuyen24Tests.m */; };
+		5BAE17CBC358DC6AE876C01D /* Pods_vanchuyen24.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E46736AAAF11D6D59414F7B /* Pods_vanchuyen24.framework */; };
+		5BAEA636FBA222332262B33A /* Pods_vanchuyen24_tvOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B36959A9EBB03D2118F93FC /* Pods_vanchuyen24_tvOSTests.framework */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		DB692A501FB8F2DD0042D739 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB692A4F1FB8F2DD0042D739 /* GoogleService-Info.plist */; };
 		DB692A5A1FB900F10042D739 /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB692A571FB900BE0042D739 /* libRCTPushNotification.a */; };
 		DB692A641FB902E70042D739 /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB692A611FB902A40042D739 /* libRCTPushNotification.a */; };
+		DBDD32AB1FE058D400C56DFA /* libRNFIRMessaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBDD32A91FE057C800C56DFA /* libRNFIRMessaging.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -288,6 +291,13 @@
 			remoteGlobalIDString = 3D05745F1DE6004600184BB4;
 			remoteInfo = "RCTPushNotification-tvOS";
 		};
+		DBDD32A81FE057C800C56DFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBDD32A41FE057C800C56DFA /* RNFIRMessaging.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNFIRMessaging;
+		};
 		DBF490AD1FB81ABB00FB6F2A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
@@ -340,17 +350,26 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* vanchuyen24-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vanchuyen24-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* vanchuyen24-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "vanchuyen24-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B36959A9EBB03D2118F93FC /* Pods_vanchuyen24_tvOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vanchuyen24_tvOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E46736AAAF11D6D59414F7B /* Pods_vanchuyen24.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vanchuyen24.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		7822A425E3954D9797A276CD /* libRNDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNDeviceInfo.a; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		AE0E50C6CD5744A58DB4D11D /* libRNDeviceInfo-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNDeviceInfo-tvOS.a"; sourceTree = "<group>"; };
+		C767BB66800EB2CC00954AE6 /* Pods-vanchuyen24-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vanchuyen24-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-vanchuyen24-tvOSTests/Pods-vanchuyen24-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C80DE4AE3C7096C84034296D /* Pods-vanchuyen24.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vanchuyen24.release.xcconfig"; path = "Pods/Target Support Files/Pods-vanchuyen24/Pods-vanchuyen24.release.xcconfig"; sourceTree = "<group>"; };
 		D3FD7D4E6C014DDB8A47D073 /* libRNFIRMessaging.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFIRMessaging.a; sourceTree = "<group>"; };
 		DB692A4F1FB8F2DD0042D739 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB692A511FB900BE0042D739 /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
 		DB692A5B1FB902A40042D739 /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
+		DBDD327E1FE056C800C56DFA /* Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
+		DBDD32A41FE057C800C56DFA /* RNFIRMessaging.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNFIRMessaging.xcodeproj; path = "../node_modules/react-native-fcm/ios/RNFIRMessaging.xcodeproj"; sourceTree = "<group>"; };
+		DBDD32AA1FE057E500C56DFA /* RNFIRMessaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNFIRMessaging.h; sourceTree = "<group>"; };
+		F2259C86E05BBD22030D41A2 /* Pods-vanchuyen24-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vanchuyen24-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-vanchuyen24-tvOSTests/Pods-vanchuyen24-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		F3CA60069A5847938C250BF2 /* libRNVersionCheck.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVersionCheck.a; sourceTree = "<group>"; };
+		FF6A5AAED53C6FF392218176 /* Pods-vanchuyen24.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vanchuyen24.debug.xcconfig"; path = "Pods/Target Support Files/Pods-vanchuyen24/Pods-vanchuyen24.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,6 +385,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBDD32AB1FE058D400C56DFA /* libRNFIRMessaging.a in Frameworks */,
 				DB692A641FB902E70042D739 /* libRCTPushNotification.a in Frameworks */,
 				DB692A5A1FB900F10042D739 /* libRCTPushNotification.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
@@ -381,6 +401,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				5BAE17CBC358DC6AE876C01D /* Pods_vanchuyen24.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +424,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BAEA636FBA222332262B33A /* Pods_vanchuyen24_tvOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +513,8 @@
 		13B07FAE1A68108700A75B9A /* vanchuyen24 */ = {
 			isa = PBXGroup;
 			children = (
+				DBDD32AA1FE057E500C56DFA /* RNFIRMessaging.h */,
+				DBDD327E1FE056C800C56DFA /* Firebase.h */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -522,6 +546,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		1AE8EFE91C32A814441BD753 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E46736AAAF11D6D59414F7B /* Pods_vanchuyen24.framework */,
+				4B36959A9EBB03D2118F93FC /* Pods_vanchuyen24_tvOSTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -543,6 +576,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				DBDD32A41FE057C800C56DFA /* RNFIRMessaging.xcodeproj */,
 				DB692A511FB900BE0042D739 /* RCTPushNotification.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
@@ -578,6 +612,8 @@
 				00E356EF1AD99517003FC87E /* vanchuyen24Tests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				DB450C681FDDBA3700A97668 /* Recovered References */,
+				B8BE5A7928609D0910A48C8C /* Pods */,
+				1AE8EFE91C32A814441BD753 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -602,6 +638,17 @@
 				DB3B12F91F9B324F0066979C /* libRCTBlob-tvOS.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B8BE5A7928609D0910A48C8C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FF6A5AAED53C6FF392218176 /* Pods-vanchuyen24.debug.xcconfig */,
+				C80DE4AE3C7096C84034296D /* Pods-vanchuyen24.release.xcconfig */,
+				C767BB66800EB2CC00954AE6 /* Pods-vanchuyen24-tvOSTests.debug.xcconfig */,
+				F2259C86E05BBD22030D41A2 /* Pods-vanchuyen24-tvOSTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		DB450C681FDDBA3700A97668 /* Recovered References */ = {
@@ -633,6 +680,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		DBDD32A51FE057C800C56DFA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DBDD32A91FE057C800C56DFA /* libRNFIRMessaging.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -658,10 +713,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "vanchuyen24" */;
 			buildPhases = (
+				F0438CFBC2C6E00A2B012CDD /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				27CE15C28DCD63F80E83B16D /* [CP] Embed Pods Frameworks */,
+				ED4D2E9ACE9CE5EEA8F27207 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -694,9 +752,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "vanchuyen24-tvOSTests" */;
 			buildPhases = (
+				865A08EE4D2264C4E17D64B8 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
+				DDDDCCE2FADB499E478810A6 /* [CP] Embed Pods Frameworks */,
+				40C4A050709E846D0A399704 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -802,6 +863,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = DBDD32A51FE057C800C56DFA /* Products */;
+					ProjectRef = DBDD32A41FE057C800C56DFA /* RNFIRMessaging.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1046,6 +1111,13 @@
 			remoteRef = DB692A621FB902A40042D739 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		DBDD32A91FE057C800C56DFA /* libRNFIRMessaging.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNFIRMessaging.a;
+			remoteRef = DBDD32A81FE057C800C56DFA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		DBF490AE1FB81ABB00FB6F2A /* libthird-party.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1126,6 +1198,28 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
+		27CE15C28DCD63F80E83B16D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-vanchuyen24/Pods-vanchuyen24-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-vanchuyen24/Pods-vanchuyen24-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1139,6 +1233,87 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		40C4A050709E846D0A399704 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-vanchuyen24-tvOSTests/Pods-vanchuyen24-tvOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		865A08EE4D2264C4E17D64B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-vanchuyen24-tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDDDCCE2FADB499E478810A6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-vanchuyen24-tvOSTests/Pods-vanchuyen24-tvOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED4D2E9ACE9CE5EEA8F27207 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-vanchuyen24/Pods-vanchuyen24-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0438CFBC2C6E00A2B012CDD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-vanchuyen24-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1270,6 +1445,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF6A5AAED53C6FF392218176 /* Pods-vanchuyen24.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1298,6 +1474,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C80DE4AE3C7096C84034296D /* Pods-vanchuyen24.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1403,6 +1580,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C767BB66800EB2CC00954AE6 /* Pods-vanchuyen24-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1431,6 +1609,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2259C86E05BBD22030D41A2 /* Pods-vanchuyen24-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
