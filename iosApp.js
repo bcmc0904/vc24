@@ -15,7 +15,8 @@ import {
 // import DeviceInfo from 'react-native-device-info';
 // import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType} from "react-native-fcm";
 
-const url = 'http://vanchuyen24.com/';
+// const url = 'http://vanchuyen24.com/';
+const url = 'http://drupalplus.org/';
 const urlGetUid = 'http://vanchuyen24.com/getuid.html?act=getid';
 const uriLogedIn1 = 'http://vanchuyen24.com/vc-dat-don.html';
 const uriLogedIn2 = 'http://vanchuyen24.com/vc-quan-huyen.html';
