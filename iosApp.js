@@ -1,7 +1,5 @@
 /**
  * React native app create for vc 24. Create by Thai
- *//**
- * React native app create for vc 24. Create by Thai
  */
 import React, { Component } from 'react';
 import {
@@ -14,8 +12,8 @@ import {
   AsyncStorage,
   Text,
 } from 'react-native';
-import DeviceInfo from 'react-native-device-info';
-import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType} from "react-native-fcm";
+// import DeviceInfo from 'react-native-device-info';
+// import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType} from "react-native-fcm";
 
 const url = 'http://vanchuyen24.com/';
 const urlGetUid = 'http://vanchuyen24.com/getuid.html?act=getid';
@@ -46,7 +44,7 @@ export default class App extends Component {
   }
 
   componentDidMount(){
-    console.log(DeviceInfo);
+    // console.log(DeviceInfo);
     // console.log(DeviceInfo.getUniqueID());
     /*FCM.getInitialNotification().then(notif => {
       this.setState({

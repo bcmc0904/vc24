@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -35,14 +36,10 @@
 		2DCD954D1E0B4F2C00145EB5 /* vanchuyen24Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* vanchuyen24Tests.m */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		9DF791E3775043D79BD20FB2 /* libRNDeviceInfo-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE0E50C6CD5744A58DB4D11D /* libRNDeviceInfo-tvOS.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
-		D3DE72B92F2B4FF7B7761BDA /* libRNFIRMessaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FD7D4E6C014DDB8A47D073 /* libRNFIRMessaging.a */; };
 		DB692A501FB8F2DD0042D739 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB692A4F1FB8F2DD0042D739 /* GoogleService-Info.plist */; };
 		DB692A5A1FB900F10042D739 /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB692A571FB900BE0042D739 /* libRCTPushNotification.a */; };
 		DB692A641FB902E70042D739 /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB692A611FB902A40042D739 /* libRCTPushNotification.a */; };
-		E897D65A6CB9454AAC114C06 /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7822A425E3954D9797A276CD /* libRNDeviceInfo.a */; };
-		4BF4274CF9E14E2B8A6168F1 /* libRNVersionCheck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CA60069A5847938C250BF2 /* libRNVersionCheck.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -319,27 +316,6 @@
 			remoteGlobalIDString = 3D383D621EBD27B9005632C8;
 			remoteInfo = "double-conversion-tvOS";
 		};
-		DBF490B71FB81ABB00FB6F2A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 287CD666CE0B4413B11396C3 /* RNDeviceInfo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DA5891D81BA9A9FC002B4DB2;
-			remoteInfo = RNDeviceInfo;
-		};
-		DBF490B91FB81ABB00FB6F2A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 287CD666CE0B4413B11396C3 /* RNDeviceInfo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E72EC1401F7ABB5A0001BC90;
-			remoteInfo = "RNDeviceInfo-tvOS";
-		};
-		DBF490BC1FB81ABB00FB6F2A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 24D9D5E3A8F045E9BFFC36CB /* RNFIRMessaging.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = RNFIRMessaging;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -362,8 +338,6 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = vanchuyen24/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = vanchuyen24/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
-		24D9D5E3A8F045E9BFFC36CB /* RNFIRMessaging.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFIRMessaging.xcodeproj; path = "../node_modules/react-native-fcm/ios/RNFIRMessaging.xcodeproj"; sourceTree = "<group>"; };
-		287CD666CE0B4413B11396C3 /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../node_modules/react-native-device-info/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* vanchuyen24-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vanchuyen24-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* vanchuyen24-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "vanchuyen24-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
@@ -376,8 +350,7 @@
 		DB692A4F1FB8F2DD0042D739 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB692A511FB900BE0042D739 /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
 		DB692A5B1FB902A40042D739 /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
-		96D35051B8894EA89841C91A /* RNVersionCheck.xcodeproj */ = {isa = PBXFileReference; name = "RNVersionCheck.xcodeproj"; path = "../node_modules/react-native-version-check/ios/RNVersionCheck.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		F3CA60069A5847938C250BF2 /* libRNVersionCheck.a */ = {isa = PBXFileReference; name = "libRNVersionCheck.a"; path = "libRNVersionCheck.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		F3CA60069A5847938C250BF2 /* libRNVersionCheck.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVersionCheck.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,10 +381,6 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				D3DE72B92F2B4FF7B7761BDA /* libRNFIRMessaging.a in Frameworks */,
-				E897D65A6CB9454AAC114C06 /* libRNDeviceInfo.a in Frameworks */,
-				9DF791E3775043D79BD20FB2 /* libRNDeviceInfo-tvOS.a in Frameworks */,
-				4BF4274CF9E14E2B8A6168F1 /* libRNVersionCheck.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,9 +556,6 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				24D9D5E3A8F045E9BFFC36CB /* RNFIRMessaging.xcodeproj */,
-				287CD666CE0B4413B11396C3 /* RNDeviceInfo.xcodeproj */,
-				96D35051B8894EA89841C91A /* RNVersionCheck.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -611,6 +577,7 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* vanchuyen24Tests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
+				DB450C681FDDBA3700A97668 /* Recovered References */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -637,6 +604,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		DB450C681FDDBA3700A97668 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				D3FD7D4E6C014DDB8A47D073 /* libRNFIRMessaging.a */,
+				7822A425E3954D9797A276CD /* libRNDeviceInfo.a */,
+				AE0E50C6CD5744A58DB4D11D /* libRNDeviceInfo-tvOS.a */,
+				F3CA60069A5847938C250BF2 /* libRNVersionCheck.a */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		DB692A521FB900BE0042D739 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -651,23 +629,6 @@
 			children = (
 				DB692A611FB902A40042D739 /* libRCTPushNotification.a */,
 				DB692A631FB902A40042D739 /* libRCTPushNotification-tvOS.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		DBF490881FB81AB900FB6F2A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DBF490BD1FB81ABB00FB6F2A /* libRNFIRMessaging.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		DBF4908A1FB81AB900FB6F2A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DBF490B81FB81ABB00FB6F2A /* libRNDeviceInfo.a */,
-				DBF490BA1FB81ABB00FB6F2A /* libRNDeviceInfo-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -841,14 +802,6 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
-				},
-				{
-					ProductGroup = DBF4908A1FB81AB900FB6F2A /* Products */;
-					ProjectRef = 287CD666CE0B4413B11396C3 /* RNDeviceInfo.xcodeproj */;
-				},
-				{
-					ProductGroup = DBF490881FB81AB900FB6F2A /* Products */;
-					ProjectRef = 24D9D5E3A8F045E9BFFC36CB /* RNFIRMessaging.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1119,27 +1072,6 @@
 			fileType = archive.ar;
 			path = "libdouble-conversion.a";
 			remoteRef = DBF490B31FB81ABB00FB6F2A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DBF490B81FB81ABB00FB6F2A /* libRNDeviceInfo.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNDeviceInfo.a;
-			remoteRef = DBF490B71FB81ABB00FB6F2A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DBF490BA1FB81ABB00FB6F2A /* libRNDeviceInfo-tvOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libRNDeviceInfo-tvOS.a";
-			remoteRef = DBF490B91FB81ABB00FB6F2A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DBF490BD1FB81ABB00FB6F2A /* libRNFIRMessaging.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNFIRMessaging.a;
-			remoteRef = DBF490BC1FB81ABB00FB6F2A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
