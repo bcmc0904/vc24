@@ -12,11 +12,11 @@ import {
   AsyncStorage,
   Text,
 } from 'react-native';
-// import DeviceInfo from 'react-native-device-info';
-// import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType} from "react-native-fcm";
+import DeviceInfo from 'react-native-device-info';
+import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType} from "react-native-fcm";
 
-// const url = 'http://vanchuyen24.com/';
-const url = 'http://drupalplus.org/';
+const url = 'http://vanchuyen24.com/';
+// const url = 'http://drupalplus.org/';
 const urlGetUid = 'http://vanchuyen24.com/getuid.html?act=getid';
 const uriLogedIn1 = 'http://vanchuyen24.com/vc-dat-don.html';
 const uriLogedIn2 = 'http://vanchuyen24.com/vc-quan-huyen.html';
@@ -26,8 +26,8 @@ const uriLogedIn4 = "http://vanchuyen24.com/vi/home.html";
 const urlPost = 'http://fcm.drupalplus.org/fcm/apptoken';
 const defaultTitle = 'Vận chuyển 24';
 const authorization = 'vanchuyen24.com';
-// const deviceId = DeviceInfo.getUniqueID();
-const deviceId = "123";
+const deviceId = DeviceInfo.getUniqueID();
+// const deviceId = "123";
 // const deviceModel = DeviceInfo.getModel();
 const deviceModel = "ipone7";
 const WEBVIEW_REF = 'webview';
@@ -46,8 +46,9 @@ export default class App extends Component {
 
   componentDidMount(){
     // console.log(DeviceInfo);
+    // console.log(deviceId);
     // console.log(DeviceInfo.getUniqueID());
-    /*FCM.getInitialNotification().then(notif => {
+    FCM.getInitialNotification().then(notif => {
       this.setState({
         initNotif: notif
       })
@@ -138,17 +139,17 @@ export default class App extends Component {
         show_in_foreground: true,
         icon: notif.fcm.icon || null,
       });
-    })*/
+    })
   }
 
   componentWillUnmount() {
-    /*this.notificationListener.remove();
-    this.refreshTokenListener.remove();*/
+    this.notificationListener.remove();
+    this.refreshTokenListener.remove();
   }
 
   onChangeToken(token) { console.log("url change")
     //Get stored rid
-    /*AsyncStorage.getItem('receive', (err, result) => {
+    AsyncStorage.getItem('receive', (err, result) => {
       if (result) {
         let receive_data = JSON.parse(result);
         this.updateReceive(token, receive_data);
@@ -159,14 +160,14 @@ export default class App extends Component {
           token: this.state.token
         }
         this.updateReceive(token, receive_data);
-        /!*AsyncStorage.setItem('receive', JSON.stringify(receive_data), () => {
+        /*AsyncStorage.setItem('receive', JSON.stringify(receive_data), () => {
           AsyncStorage.getItem('receive', (err, result) => {
             let receive_data = JSON.parse(result);
 
           });
-        });*!/
+        });*/
       }
-    });*/
+    });
   }
 
   updateReceive(token, receive_data) {
