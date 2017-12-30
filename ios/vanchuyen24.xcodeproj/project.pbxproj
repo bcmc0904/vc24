@@ -39,8 +39,8 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
+		DB1C3C5E1FF40C7200F45C51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB1C3C5D1FF40C7200F45C51 /* GoogleService-Info.plist */; };
 		DB501ADB1FF2B76F00104F26 /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB501AD81FF2B68100104F26 /* libRNDeviceInfo.a */; };
-		DB692A501FB8F2DD0042D739 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB692A4F1FB8F2DD0042D739 /* GoogleService-Info.plist */; };
 		DB692A5A1FB900F10042D739 /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB692A571FB900BE0042D739 /* libRCTPushNotification.a */; };
 		DB692A641FB902E70042D739 /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB692A611FB902A40042D739 /* libRCTPushNotification.a */; };
 		DBDD32AB1FE058D400C56DFA /* libRNFIRMessaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBDD32A91FE057C800C56DFA /* libRNFIRMessaging.a */; };
@@ -376,9 +376,9 @@
 		C767BB66800EB2CC00954AE6 /* Pods-vanchuyen24-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vanchuyen24-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-vanchuyen24-tvOSTests/Pods-vanchuyen24-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C80DE4AE3C7096C84034296D /* Pods-vanchuyen24.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vanchuyen24.release.xcconfig"; path = "Pods/Target Support Files/Pods-vanchuyen24/Pods-vanchuyen24.release.xcconfig"; sourceTree = "<group>"; };
 		D3FD7D4E6C014DDB8A47D073 /* libRNFIRMessaging.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFIRMessaging.a; sourceTree = "<group>"; };
+		DB1C3C5D1FF40C7200F45C51 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Library/Mobile Documents/com~apple~CloudDocs/Thai/GG/VC24/ios/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB501AD11FF2ADDD00104F26 /* vanchuyen24.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = vanchuyen24.entitlements; path = vanchuyen24/vanchuyen24.entitlements; sourceTree = "<group>"; };
 		DB501AD21FF2B68100104F26 /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../node_modules/react-native-device-info/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
-		DB692A4F1FB8F2DD0042D739 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB692A511FB900BE0042D739 /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
 		DB692A5B1FB902A40042D739 /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
 		DBDD327E1FE056C800C56DFA /* Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
@@ -531,6 +531,7 @@
 		13B07FAE1A68108700A75B9A /* vanchuyen24 */ = {
 			isa = PBXGroup;
 			children = (
+				DB1C3C5D1FF40C7200F45C51 /* GoogleService-Info.plist */,
 				DB501AD11FF2ADDD00104F26 /* vanchuyen24.entitlements */,
 				DBDD32AA1FE057E500C56DFA /* RNFIRMessaging.h */,
 				DBDD327E1FE056C800C56DFA /* Firebase.h */,
@@ -541,7 +542,6 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				DB692A4F1FB8F2DD0042D739 /* GoogleService-Info.plist */,
 			);
 			name = vanchuyen24;
 			sourceTree = "<group>";
@@ -813,6 +813,7 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 66K34E7GG7;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -1213,8 +1214,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				DB1C3C5E1FF40C7200F45C51 /* GoogleService-Info.plist in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				DB692A501FB8F2DD0042D739 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1502,6 +1503,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = vanchuyen24/vanchuyen24.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 66K34E7GG7;
@@ -1513,6 +1516,7 @@
 					"$(SRCROOT)/../node_modules/react-native-version-check/ios",
 				);
 				INFOPLIST_FILE = vanchuyen24/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1521,6 +1525,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vanchuyen24.app;
 				PRODUCT_NAME = vanchuyen24;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1532,6 +1537,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = vanchuyen24/vanchuyen24.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 66K34E7GG7;
 				HEADER_SEARCH_PATHS = (
@@ -1542,6 +1549,7 @@
 					"$(SRCROOT)/../node_modules/react-native-version-check/ios",
 				);
 				INFOPLIST_FILE = vanchuyen24/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1550,6 +1558,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vanchuyen24.app;
 				PRODUCT_NAME = vanchuyen24;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
