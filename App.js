@@ -25,7 +25,6 @@ const uriLogedIn1 = 'http://vanchuyen24.com/vc-dat-don.html';
 const uriLogedIn2 = 'http://vanchuyen24.com/vc-quan-huyen.html';
 const uriLogedIn3 = "http://vanchuyen24.com/vi/vc-quan-huyen.html";
 const uriLogedIn4 = "http://vanchuyen24.com/vi/home.html";
-const checkUpdateUrl = "http://fcm.drupalplus.org/app/vc24/update.json";
 
 const urlPost = 'http://fcm.drupalplus.org/fcm/apptoken';
 const defaultTitle = 'Vận chuyển 24';

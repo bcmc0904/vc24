@@ -40,6 +40,7 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		DB1C3C5E1FF40C7200F45C51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB1C3C5D1FF40C7200F45C51 /* GoogleService-Info.plist */; };
+		DB1C3C9D1FF8002800F45C51 /* libRNVersionCheck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB1C3C9C1FF8000900F45C51 /* libRNVersionCheck.a */; };
 		DB501ADB1FF2B76F00104F26 /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB501AD81FF2B68100104F26 /* libRNDeviceInfo.a */; };
 		DB692A5A1FB900F10042D739 /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB692A571FB900BE0042D739 /* libRCTPushNotification.a */; };
 		DB692A641FB902E70042D739 /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB692A611FB902A40042D739 /* libRCTPushNotification.a */; };
@@ -243,6 +244,13 @@
 			remoteGlobalIDString = 358F4ED71D1E81A9004DF814;
 			remoteInfo = RCTBlob;
 		};
+		DB1C3C9B1FF8000900F45C51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB1C3C971FF8000900F45C51 /* RNVersionCheck.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNVersionCheck;
+		};
 		DB3B12F81F9B324F0066979C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */;
@@ -377,6 +385,7 @@
 		C80DE4AE3C7096C84034296D /* Pods-vanchuyen24.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vanchuyen24.release.xcconfig"; path = "Pods/Target Support Files/Pods-vanchuyen24/Pods-vanchuyen24.release.xcconfig"; sourceTree = "<group>"; };
 		D3FD7D4E6C014DDB8A47D073 /* libRNFIRMessaging.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFIRMessaging.a; sourceTree = "<group>"; };
 		DB1C3C5D1FF40C7200F45C51 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Library/Mobile Documents/com~apple~CloudDocs/Thai/GG/VC24/ios/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DB1C3C971FF8000900F45C51 /* RNVersionCheck.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNVersionCheck.xcodeproj; path = "../node_modules/react-native-version-check/ios/RNVersionCheck.xcodeproj"; sourceTree = "<group>"; };
 		DB501AD11FF2ADDD00104F26 /* vanchuyen24.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = vanchuyen24.entitlements; path = vanchuyen24/vanchuyen24.entitlements; sourceTree = "<group>"; };
 		DB501AD21FF2B68100104F26 /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../node_modules/react-native-device-info/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
 		DB692A511FB900BE0042D739 /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
@@ -402,6 +411,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB1C3C9D1FF8002800F45C51 /* libRNVersionCheck.a in Frameworks */,
 				DB501ADB1FF2B76F00104F26 /* libRNDeviceInfo.a in Frameworks */,
 				DBDD32AB1FE058D400C56DFA /* libRNFIRMessaging.a in Frameworks */,
 				DB692A641FB902E70042D739 /* libRCTPushNotification.a in Frameworks */,
@@ -626,6 +636,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				DB1C3C971FF8000900F45C51 /* RNVersionCheck.xcodeproj */,
 				DB692A5B1FB902A40042D739 /* RCTPushNotification.xcodeproj */,
 				13B07FAE1A68108700A75B9A /* vanchuyen24 */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -669,6 +680,14 @@
 				F2259C86E05BBD22030D41A2 /* Pods-vanchuyen24-tvOSTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		DB1C3C981FF8000900F45C51 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB1C3C9C1FF8000900F45C51 /* libRNVersionCheck.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		DB450C681FDDBA3700A97668 /* Recovered References */ = {
@@ -872,12 +891,12 @@
 					ProjectRef = 00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */;
 				},
 				{
-					ProductGroup = DB692A5C1FB902A40042D739 /* Products */;
-					ProjectRef = DB692A5B1FB902A40042D739 /* RCTPushNotification.xcodeproj */;
-				},
-				{
 					ProductGroup = DB692A521FB900BE0042D739 /* Products */;
 					ProjectRef = DB692A511FB900BE0042D739 /* RCTPushNotification.xcodeproj */;
+				},
+				{
+					ProductGroup = DB692A5C1FB902A40042D739 /* Products */;
+					ProjectRef = DB692A5B1FB902A40042D739 /* RCTPushNotification.xcodeproj */;
 				},
 				{
 					ProductGroup = 139105B71AF99BAD00B5F7CC /* Products */;
@@ -906,6 +925,10 @@
 				{
 					ProductGroup = DBDD32A51FE057C800C56DFA /* Products */;
 					ProjectRef = DBDD32A41FE057C800C56DFA /* RNFIRMessaging.xcodeproj */;
+				},
+				{
+					ProductGroup = DB1C3C981FF8000900F45C51 /* Products */;
+					ProjectRef = DB1C3C971FF8000900F45C51 /* RNVersionCheck.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1099,6 +1122,13 @@
 			fileType = archive.ar;
 			path = libRCTBlob.a;
 			remoteRef = ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB1C3C9C1FF8000900F45C51 /* libRNVersionCheck.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNVersionCheck.a;
+			remoteRef = DB1C3C9B1FF8000900F45C51 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		DB3B12F91F9B324F0066979C /* libRCTBlob-tvOS.a */ = {
