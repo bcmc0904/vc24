@@ -13,7 +13,8 @@ import {
   Text,
   BackHandler,
   ToastAndroid,
-  Linking
+  Linking,
+  AppState
 } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
 import VersionCheck from 'react-native-version-check';
@@ -42,9 +43,7 @@ export default class App extends Component {
       token: '',
       url: url,
       receive: '',
-      canGoBack: false,
-      badge: 0,
-      country: 'vn'
+      canGoBack: false
     }
 
     this.handleBackButton = this.handleBackButton.bind(this);
@@ -78,21 +77,20 @@ export default class App extends Component {
   }
 
   componentDidMount(){
-    // BackAndroid.addEventListener('hardwareBackPress', this.handleBackButton);
     BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
-
+    Linking.addEventListener('url', this._handleOpenURL);
     this.checkAppUpdate();
-
+    AppState.addEventListener('change', this._handleAppStateChange);
+    FCM.setBadgeNumber(0);
     FCM.getInitialNotification().then(notif => {
       console.log(notif);
       this.setState({
-        initNotif: notif,
-        badge: 0
+        initNotif: notif
       });
     });
 
     try{
-      let result = FCM.requestPermissions({badge: false, sound: true, alert: true});
+      let result = FCM.requestPermissions({badge: true, sound: true, alert: true});
     } catch(e){
       console.error(e);
       Alert.alert(
@@ -110,7 +108,7 @@ export default class App extends Component {
       this.setState({
         token: token
       });
-      // this.onChangeToken(token);
+      this.onChangeToken(token);
     });
 
     this.notificationListener = FCM.on(FCMEvent.Notification, notif => {
@@ -119,6 +117,8 @@ export default class App extends Component {
         return;
       }
       if(notif.opened_from_tray){
+        FCM.setBadgeNumber(0);
+        this.refs[WEBVIEW_REF].reload();
         return;
       }
 
@@ -127,13 +127,13 @@ export default class App extends Component {
         this.onChangeToken(token);
       });
 
-      FCM.enableDirectChannel();
+      /*FCM.enableDirectChannel();
       this.channelConnectionListener = FCM.on(FCMEvent.DirectChannelConnectionChanged, (data) => {
         console.log('direct channel connected' + data);
-      });
+      });*/
 
       //Push msg to screen
-      FCM.scheduleLocalNotification({
+      /*FCM.scheduleLocalNotification({
         id: notif.from || 'testnotif',
         fire_date: new Date().getTime()+3000,
         vibrate: 500,
@@ -143,16 +143,26 @@ export default class App extends Component {
         priority: "high",
         show_in_foreground: true,
         icon: notif.fcm.icon || null,
-      });
+      });*/
     })
   }
 
   componentWillUnmount() {
-    // BackAndroid.removeEventListener('hardwareBackPress', this.handleBackButton);
+    Linking.removeEventListener('url', this._handleOpenURL);
     BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
+    AppState.removeEventListener('change', this._handleAppStateChange);
 
     this.notificationListener.remove();
     this.refreshTokenListener.remove();
+  }
+
+  _handleOpenURL(event) {
+    console.log(event.url);
+  }
+
+  _handleAppStateChange = (nextAppState) => {
+    if (AppState.currentState = 'active')
+      FCM.setBadgeNumber(0);
   }
 
   onChangeToken(token) {
@@ -255,6 +265,16 @@ export default class App extends Component {
     });
     if (webViewState.url == uriLogedIn1 || webViewState.url == uriLogedIn2 || webViewState.url == uriLogedIn3 || webViewState.url == uriLogedIn4 || webViewState.url == url) {
       this.onChangeToken(this.state.token);
+    }
+    if (webViewState.url.indexOf('viec-vat.html') > 0) {
+      Linking.canOpenURL(webViewState.url).then(supported => {
+        if (!supported) {
+          console.log('Can\'t handle url: ' + webViewState.url);
+        } else {
+          Linking.openURL(webViewState.url);
+          this.refs[WEBVIEW_REF].goBack();
+        }
+      }).catch(err => console.error('An error occurred', err));
     }
   }
 
