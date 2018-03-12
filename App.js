@@ -20,7 +20,8 @@ import DeviceInfo from 'react-native-device-info';
 import VersionCheck from 'react-native-version-check';
 import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType} from "react-native-fcm";
 
-const url = 'http://vanchuyen24.com/';
+const url = 'http://drupalplus.org/test-file.html';
+// const url = 'http://vanchuyen24.com/';
 const urlGetUid = 'http://vanchuyen24.com/getuid.html?act=getid';
 const uriLogedIn1 = 'http://vanchuyen24.com/vc-dat-don.html';
 const uriLogedIn2 = 'http://vanchuyen24.com/vc-quan-huyen.html';
@@ -51,7 +52,6 @@ export default class App extends Component {
 
   checkAppUpdate() {
     let appver = DeviceInfo.getVersion();
-    console.log('app version:', appver);
 
     VersionCheck.needUpdate().then(async res => {
       if (res.isNeeded) {
@@ -78,19 +78,17 @@ export default class App extends Component {
 
   componentDidMount(){
     BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
-    Linking.addEventListener('url', this._handleOpenURL);
     this.checkAppUpdate();
-    AppState.addEventListener('change', this._handleAppStateChange);
-    FCM.setBadgeNumber(0);
+    // FCM.setBadgeNumber(0);
     FCM.getInitialNotification().then(notif => {
-      console.log(notif);
+      console.log('getInitialNotification: ', notif);
       this.setState({
         initNotif: notif
       });
     });
 
     try{
-      let result = FCM.requestPermissions({badge: true, sound: true, alert: true});
+      let result = FCM.requestPermissions({badge: false, sound: true, alert: true});
     } catch(e){
       console.error(e);
       Alert.alert(
@@ -108,32 +106,30 @@ export default class App extends Component {
       this.setState({
         token: token
       });
-      this.onChangeToken(token);
+      // this.onChangeToken(token);
     });
 
     this.notificationListener = FCM.on(FCMEvent.Notification, notif => {
-      console.log("Notification", notif);
+      console.log("FCMEvent.Notification: ", notif);
       if(notif.local_notification){
         return;
       }
       if(notif.opened_from_tray){
-        FCM.setBadgeNumber(0);
         this.refs[WEBVIEW_REF].reload();
         return;
       }
 
       this.refreshTokenListener = FCM.on(FCMEvent.RefreshToken, token => {
-        console.log("TOKEN (refreshUnsubscribe)", token);
         this.onChangeToken(token);
       });
 
-      /*FCM.enableDirectChannel();
+      FCM.enableDirectChannel();
       this.channelConnectionListener = FCM.on(FCMEvent.DirectChannelConnectionChanged, (data) => {
         console.log('direct channel connected' + data);
-      });*/
+      });
 
       //Push msg to screen
-      /*FCM.scheduleLocalNotification({
+      FCM.scheduleLocalNotification({
         id: notif.from || 'testnotif',
         fire_date: new Date().getTime()+3000,
         vibrate: 500,
@@ -143,26 +139,15 @@ export default class App extends Component {
         priority: "high",
         show_in_foreground: true,
         icon: notif.fcm.icon || null,
-      });*/
+      });
     })
   }
 
   componentWillUnmount() {
-    Linking.removeEventListener('url', this._handleOpenURL);
     BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
-    AppState.removeEventListener('change', this._handleAppStateChange);
 
     this.notificationListener.remove();
     this.refreshTokenListener.remove();
-  }
-
-  _handleOpenURL(event) {
-    console.log(event.url);
-  }
-
-  _handleAppStateChange = (nextAppState) => {
-    if (AppState.currentState = 'active')
-      FCM.setBadgeNumber(0);
   }
 
   onChangeToken(token) {
@@ -263,10 +248,14 @@ export default class App extends Component {
     this.setState({
       canGoBack: webViewState.canGoBack
     });
-    if (webViewState.url == uriLogedIn1 || webViewState.url == uriLogedIn2 || webViewState.url == uriLogedIn3 || webViewState.url == uriLogedIn4 || webViewState.url == url) {
+    if (webViewState.url == uriLogedIn1 ||
+      webViewState.url == uriLogedIn2 ||
+      webViewState.url == uriLogedIn3 ||
+      webViewState.url == uriLogedIn4 ||
+      webViewState.url == url) {
       this.onChangeToken(this.state.token);
     }
-    if (webViewState.url.indexOf('viec-vat.html') > 0) {
+    /*if (webViewState.url.indexOf('viec-vat.html') > 0) {
       Linking.canOpenURL(webViewState.url).then(supported => {
         if (!supported) {
           console.log('Can\'t handle url: ' + webViewState.url);
@@ -275,7 +264,7 @@ export default class App extends Component {
           this.refs[WEBVIEW_REF].goBack();
         }
       }).catch(err => console.error('An error occurred', err));
-    }
+    }*/
   }
 
   renderError(errorDomain, errorCode, errorDesc) {
