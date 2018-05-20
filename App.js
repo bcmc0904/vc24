@@ -20,8 +20,8 @@ import DeviceInfo from 'react-native-device-info';
 import VersionCheck from 'react-native-version-check';
 import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType} from "react-native-fcm";
 
-const url = 'http://drupalplus.org/test-file.html';
-// const url = 'http://vanchuyen24.com/';
+// const url = 'http://drupalplus.org/test-file.html';
+const url = 'http://vanchuyen24.com/';
 const urlGetUid = 'http://vanchuyen24.com/getuid.html?act=getid';
 const uriLogedIn1 = 'http://vanchuyen24.com/vc-dat-don.html';
 const uriLogedIn2 = 'http://vanchuyen24.com/vc-quan-huyen.html';
@@ -115,6 +115,7 @@ export default class App extends Component {
         return;
       }
       if(notif.opened_from_tray){
+        console.log(notif);
         this.refs[WEBVIEW_REF].reload();
         return;
       }

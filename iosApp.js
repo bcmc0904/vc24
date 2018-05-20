@@ -11,10 +11,10 @@ import {
   Alert,
   AsyncStorage,
   Text,
-  AppState
+  AppState,
+  Linking
 } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
-import VersionCheck from 'react-native-version-check';
 import FCM, {
   FCMEvent,
   RemoteNotificationResult,
@@ -23,15 +23,8 @@ import FCM, {
 } from "react-native-fcm";
 
 const url = 'http://vanchuyen24.com/';
-// const url = 'http://drupalplus.org/';
 const urlGetUid = 'http://vanchuyen24.com/getuid.html?act=getid';
-const uriLogedIn1 = 'http://vanchuyen24.com/vc-dat-don.html';
-const uriLogedIn2 = 'http://vanchuyen24.com/vc-quan-huyen.html';
-const uriLogedIn3 = "http://vanchuyen24.com/vi/vc-quan-huyen.html";
-const uriLogedIn4 = "http://vanchuyen24.com/vi/home.html";
-const uriLogedIn5 = "http://vanchuyen24.com/vi/oto.html";
-const uriLogedIn6 = "http://vanchuyen24.com/vi/chu-hang.html";
-const uriLogedIn7 = 'http://vanchuyen24.com/vi/vc-dat-don.html';
+const checkUpdateUrl = "http://fcm.drupalplus.org/app/vc24/update.json";
 
 const urlPost = 'http://fcm.drupalplus.org/fcm/apptoken';
 const defaultTitle = 'Vận chuyển 24';
@@ -50,6 +43,7 @@ export default class App extends Component {
       url: url,
       receive: ''
     }
+    this.getMatchUrl = this.getMatchUrl.bind(this);
   }
 
   checkAppUpdate() {
@@ -57,25 +51,35 @@ export default class App extends Component {
     console.log('app version:', appver);
 
     try {
-      VersionCheck.needUpdate().then(async res => {
-        if (res.isNeeded) {
-          await Alert.alert(
-              'Nâng cấp phiên bản',
-              'Đã có bản nâng cấp mới cho điện thoại của bạn',
-              [
-                {
-                  text: 'Nhắc tôi sau',
-                  onPress: () => console.log('Cancel Pressed'),
-                  style: 'cancel'
-                },
-                {
-                  text: 'Cập nhật', onPress: () => {
-                  Linking.openURL(VersionCheck.getStoreUrl());
-                }
-                },
-              ],
-              {cancelable: false}
-          )
+      fetch(checkUpdateUrl).then(async res => {
+        if (res.status == 200) {
+          try {
+            let res_data = JSON.parse(res._bodyInit);
+            if (res_data.ios.version > appver) {
+              await Alert.alert(
+                'Nâng cấp phiên bản',
+                'Đã có bản nâng cấp mới cho điện thoại của bạn',
+                [
+                  {
+                    text: 'Nhắc tôi sau',
+                    onPress: () => console.log('Cancel Pressed'),
+                    style: 'cancel'
+                  },
+                  {
+                    text: 'Cập nhật', onPress: () => {
+                      console.log(res_data.ios.storeUrl)
+                      Linking.canOpenURL(res_data.ios.storeUrl).then(supported => {
+                        supported && Linking.openURL(res_data.ios.storeUrl);
+                      }, (err) => console.log(err));
+                    }
+                  },
+                ],
+                {cancelable: false}
+              )
+            }
+          } catch (err) {
+            console.log(err);
+          }
         }
       });
     } catch (err) {
@@ -125,82 +129,20 @@ export default class App extends Component {
       this.onChangeToken(token);
     });
 
-    /*if (Platform.OS === 'ios') {
-      FCM.getAPNSToken().then(token => {
-        // console.log("line 91 (getAPNSToken)", token);
-        this.setState({
-          token: token
-        });
-        this.onChangeToken(token);
-      });
-    }*/
-
     this.notificationListener = FCM.on(FCMEvent.Notification, notif => {
-      // console.log("Notification", notif);
       if (notif.local_notification) {
         return;
       }
       if (notif.opened_from_tray) {
         FCM.setBadgeNumber(0);
+        this.refs[WEBVIEW_REF].reload();
         return;
       }
-
-      /*if (Platform.OS === 'ios') {
-        //optional
-        //iOS requires developers to call completionHandler to end notification
-        // process. If you do not call it your background remote notifications
-        // could be throttled, to read more about it see the above
-        // documentation link. This library handles it for you automatically
-        // with default behavior (for remote notification, finish with NoData;
-        // for WillPresent, finish depend on "show_in_foreground"). However if
-        // you want to return different result, follow the following code to
-        // override notif._notificationType is available for iOS platfrom
-        switch (notif._notificationType) {
-          case NotificationType.Remote:
-            notif.finish(RemoteNotificationResult.NewData) //other types
-                                                           // available:
-                                                           // RemoteNotificationResult.NewData,
-                                                           // RemoteNotificationResult.ResultFailed
-            break;
-          case NotificationType.NotificationResponse:
-            notif.finish();
-            break;
-          case NotificationType.WillPresent:
-            notif.finish(WillPresentNotificationResult.All) //other types
-                                                            // available:
-                                                            // WillPresentNotificationResult.None
-            break;
-        }
-      }*/
 
       this.refreshTokenListener = FCM.on(FCMEvent.RefreshToken, token => {
         // console.log("TOKEN (refreshUnsubscribe)", token);
         this.onChangeToken(token);
       });
-
-      // direct channel related methods are ios only
-      // directly channel is truned off in iOS by default, this method enables
-      // it
-      /*FCM.enableDirectChannel();
-      this.channelConnectionListener = FCM.on(FCMEvent.DirectChannelConnectionChanged, (data) => {
-        console.log('direct channel connected' + data);
-      });
-      setTimeout(function () {
-        FCM.isDirectChannelEstablished().then(d => console.log(d));
-      }, 1000);*/
-
-      //Push msg to screen
-      /*FCM.scheduleLocalNotification({
-        id: notif.from || 'testnotif',
-        fire_date: new Date().getTime() + 3000,
-        vibrate: 500,
-        title: notif.fcm.title || "Vận chuyển 24",
-        body: notif.fcm.body,
-        sound: notif.fcm.sound || "default",
-        priority: "high",
-        show_in_foreground: true,
-        icon: notif.fcm.icon || null,
-      });*/
     })
   }
 
@@ -236,8 +178,6 @@ export default class App extends Component {
   updateReceive(token, receive_data) {
     fetch(urlGetUid)
       .then((response) => {
-        // console.log(response);
-        // console.log(receive_data);
         if (response.status == 200) {
           try {
             let res_data = JSON.parse(response._bodyInit);
@@ -318,18 +258,47 @@ export default class App extends Component {
     });
   }
 
-  _onNavigationStateChange(webViewState) {
-    // console.log(webViewState.url);
-    if (webViewState.url == uriLogedIn1 ||
-        webViewState.url == uriLogedIn2 ||
-        webViewState.url == uriLogedIn3 ||
-        webViewState.url == uriLogedIn4 ||
-        webViewState.url == uriLogedIn5 ||
-        webViewState.url == uriLogedIn6 ||
-        webViewState.url == uriLogedIn7 ||
-        webViewState.url == url) {
+  getMatchUrl(curUrl) {
+    if (curUrl.indexOf('vc-dat-don.html') > 0 ||
+      curUrl.indexOf('vc-quan-huyen.html') > 0 ||
+      curUrl.indexOf('oto.html') > 0 ||
+      curUrl.indexOf('home.html') > 0 ||
+      curUrl == url) {
+      return true;
+    }
+    return false;
+  }
+
+  async _onNavigationStateChange(webViewState) {
+    if (this.getMatchUrl(webViewState.url)) {
       this.onChangeToken(this.state.token);
     }
+
+    // Open url in default brower
+    if (webViewState.url === 'http://vanchuyen24.com/viec-vat.html') {
+      // let receive = await this.getStore();
+      let viec_vat = webViewState.url;// + '?app=' + receive;
+      Linking.canOpenURL(viec_vat).then(supported => {
+        supported && Linking.openURL(viec_vat);
+        if (webViewState.canGoBack) {
+          this.refs[WEBVIEW_REF].goBack();
+        }
+      }, (err) => console.log(err));
+    }
+  }
+
+  async getStore() {
+    return await AsyncStorage.getItem('receive', (err, result) => {
+      if (result) {
+        return result;
+      } else {
+        return {
+          rid: 0,
+          uid: 0,
+          token: this.state.token
+        };
+      }
+    });
   }
 
   renderError(errorDomain, errorCode, errorDesc) {
